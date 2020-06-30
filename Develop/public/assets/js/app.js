@@ -5,6 +5,9 @@ var PORT = 5000;
 const events = require('events');
 var fs = require("fs");
 var server = http.createServer(handleRequest);
+var notesData = require('../../../db/db.json');
+
+// Routing 
 
 function handleRequest(req, res) {
     var path = req.url;
@@ -31,6 +34,19 @@ function handleRequest(req, res) {
         res.end(data);
       });
     }
+}
+
+module.exports = function(app) {
+    app.get("/api/notes", function(req, res) {
+        res.json(notesData);
+      });
+
+    app.post("/api/notes", function(req, res) {
+    if (notesData.length < 5) {
+        notesData.push(req.body);
+        res.json(true);
+    }
+    });
 }
 
 server.listen(PORT, function() {
