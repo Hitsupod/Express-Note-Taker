@@ -6,6 +6,8 @@ const events = require('events');
 var fs = require("fs");
 var server = http.createServer(handleRequest);
 var notesData = require('../../../db/db.json');
+var index = require('../js/index');
+
 
 // Routing 
 
@@ -36,7 +38,7 @@ function handleRequest(req, res) {
     }
 }
 
-module.exports = function(app) {
+/*module.exports = function(app) {
     app.get("/api/notes", function(req, res) {
         res.json(notesData);
       });
@@ -47,7 +49,7 @@ module.exports = function(app) {
         res.json(true);
     }
     });
-}
+}*/
 
 server.listen(PORT, function() {
     console.log("Server is listening on PORT: " + PORT);
