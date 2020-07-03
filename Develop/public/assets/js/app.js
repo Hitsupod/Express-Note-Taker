@@ -6,7 +6,7 @@ const events = require('events');
 var fs = require("fs");
 var server = http.createServer(handleRequest);
 var notesData = require('../../../db/db.json');
-var index = require('../js/index');
+// var index = require('../js/index');
 
 
 // Routing 

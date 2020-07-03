@@ -3,7 +3,7 @@ const $noteText = $(".note-textarea");
 const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
-var app = require('../js/app')
+// var app = require('../js/app')
 
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
